@@ -8,8 +8,6 @@ Install
 
 Just clone the repository into ~/.vim
 
-    git clone https://github.com/mychris/dotvim.git ~/.vim
-    or
     git clone git://github.com/mychris/dotvim.git ~/.vim
 
 make a symlink to ~/.vim/vimrc
@@ -25,9 +23,7 @@ Command-T
 
 After updating the submodules, you must build the command-t extension:
 
-    cd ~/.vim/bundle/command-t/ruby/command-t
-    ruby extconf.rb
-    make
+    cd ~/.vim/bundle/command-t/ruby/command-t && ruby extconf.rb && make
 
 If you have any problems with Command-T, see:
 
