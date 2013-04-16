@@ -1,0 +1,45 @@
+[submodule "bundle/lustyjuggler"]
+	path = bundle/lustyjuggler
+	url = https://github.com/vim-scripts/LustyJuggler/
+[submodule "bundle/command-t"]
+	path = bundle/command-t
+	url = git://git.wincent.com/command-t.git
+[submodule "bundle/gundo"]
+	path = bundle/gundo
+	url = https://github.com/sjl/gundo.vim/
+[submodule "bundle/nerdcommenter"]
+	path = bundle/nerdcommenter
+	url = https://github.com/scrooloose/nerdcommenter/
+[submodule "bundle/nerdtree"]
+	path = bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree/
+[submodule "bundle/scratch"]
+	path = bundle/scratch
+	url = https://github.com/vim-scripts/scratch.vim/
+[submodule "bundle/securemodelines"]
+	path = bundle/securemodelines
+	url = https://github.com/ciaranm/securemodelines/
+[submodule "bundle/syntastic"]
+	path = bundle/syntastic
+	url = https://github.com/scrooloose/syntastic/
+[submodule "bundle/vim-help"]
+	path = bundle/vim-help
+	url = https://github.com/jjrdn/vim-help/
+[submodule "bundle/vim-json"]
+	path = bundle/vim-json
+	url = https://github.com/vim-scripts/vim-json-bundle/
+[submodule "bundle/vim-kolor"]
+	path = bundle/vim-kolor
+	url = https://github.com/zeis/vim-kolor/
+[submodule "bundle/markdown"]
+	path = bundle/markdown
+	url = https://github.com/hallison/vim-markdown/
+[submodule "bundle/scala"]
+	path = bundle/scala
+	url = https://github.com/derekwyatt/vim-scala/
+[submodule "bundle/vimux"]
+	path = bundle/vimux
+	url = https://github.com/benmills/vimux/
+[submodule "bundle/xterm-color-table"]
+	path = bundle/xterm-color-table
+	url = https://github.com/guns/xterm-color-table.vim

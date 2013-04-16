@@ -1,0 +1,517 @@
+"
+" ~/.vimrc
+"
+
+" NO WORDS ======================================================== {{{
+
+filetype off
+call pathogen#infect()
+filetype plugin indent on
+set nocompatible
+Helptags
+
+" }}}
+
+" General ========================================================= {{{
+
+set encoding=utf-8
+set showcmd
+set showmode
+set ttyfast
+set ruler
+set history=500
+set laststatus=2
+set autoindent
+set hidden
+set backspace=indent,eol,start
+set visualbell
+
+set notimeout
+set ttimeout
+set ttimeoutlen=10
+
+set synmaxcol=600
+
+set scrolloff=3
+set sidescroll=1
+set sidescrolloff=10
+
+set showbreak=↪
+
+set cmdheight=2
+
+set guioptions-=m
+set guioptions-=T
+set guioptions-=r
+
+" disable modeline, use SecureModelines
+set modelines=0
+set nomodeline
+
+" Autosave on focus lost
+au FocusLost * silent! wa
+
+" Resize on window resize
+au VimResized * :wincmd =
+
+" please, fix my typos!
+command! -bang Q q<bang>
+command! -bang W w<bang>
+command! -bang E e<bang>
+
+command! -bang Wq wq<bang>
+command! -bang WQ wq<bang>
+
+" }}}
+
+" Cursor Line ===================================================== {{{
+
+" Only show cursorline in current win
+augroup cursor_line
+  au!
+  au WinLeave,InsertEnter * set nocursorline
+  au WinEnter,InsertLeave * set cursorline
+augroup END
+
+set cursorline
+
+" }}}
+
+" Line numbers ==================================================== {{{
+
+augroup line_numbers
+  au!
+  au FocusGained,WinEnter,InsertLeave * call SaveRelative()
+  au FocusLost,WinLeave,InsertEnter * call SaveNumber()
+augroup END
+set relativenumber
+
+function! SaveRelative()
+    if &number || &relativenumber
+        set relativenumber
+    endif
+endfunction
+
+function! SaveNumber()
+    if &number || &relativenumber
+        set number
+    endif
+endfunction
+
+function! SaveToggleNumber()
+    if &number || &relativenumber
+        if &number
+            set relativenumber
+        elseif &relativenumber
+            set number
+        endif
+    endif
+endfunction
+
+" }}}
+
+" Line Return ===================================================== {{{
+
+" Make sure Vim returns to the same line when you reopen a file.
+" https://github.com/sjl/dotfiles/blob/master/vim/vimrc
+augroup line_return
+    au!
+    au BufReadPost *
+        \ if line("'\"") > 0 && line("'\"") <= line("$") |
+        \ execute 'normal! g`"zvzz' |
+        \ endif
+augroup END
+
+"}}}
+
+" Whitespace, wrapping stuff ====================================== {{{
+
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+
+" long lines
+set wrap
+set textwidth=80
+set formatoptions=qrn1
+set colorcolumn=81
+
+set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮,trail:␣
+
+augroup show_list
+  au!
+  au InsertEnter * set list
+  au InsertLeave * set nolist
+augroup END
+
+" }}}
+
+" Leader ========================================================== {{{
+
+let mapleader = ","
+let maplocalleader = "\\"
+
+" }}}
+
+" Basic Keybindings =============================================== {{{
+
+nnoremap M K
+
+nnoremap ; :
+inoremap <F1> <ESC>
+nnoremap <F1> <ESC>
+vnoremap <F1> <ESC>
+
+"no need any more, use capslock, remap in X11
+"inoremap jk <ESC>
+
+" Don't move cursor!
+nnoremap J mzJ`z
+
+" surround with whitespace
+nnoremap <leader><SPACE> dawi<SPACE><SPACE><ESC>hpw
+
+" save
+nnoremap <leader>s :w!<CR>
+
+" }}}
+
+" Movement ======================================================== {{{
+
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+nnoremap <PageUp> <nop>
+nnoremap <PageDown> <nop>
+nnoremap <Home> <nop>
+nnoremap <End> <nop>
+
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
+inoremap <PageUp> <nop>
+inoremap <PageDown> <nop>
+inoremap <Home> <nop>
+inoremap <End> <nop>
+
+noremap j gj
+noremap k gk
+noremap gj j
+noremap gk k
+
+noremap H ^
+noremap L $
+vnoremap L g_
+
+" center
+nnoremap g, g,zz
+nnoremap g; g;zz
+
+" }}}
+
+" Searching ======================================================= {{{
+
+set incsearch
+set ignorecase
+set smartcase
+set showmatch
+set hlsearch
+set gdefault
+
+nnoremap / /\v
+vnoremap / /\v
+
+nnoremap <silent> <leader>, :noh<CR>
+
+" Keep search in the middle of the window
+nnoremap n nzzzv
+nnoremap N Nzzzv
+
+" don't move!
+nnoremap * *<C-o>
+
+" }}}
+
+" Split windows =================================================== {{{
+
+nnoremap <leader>v <C-w>v<C-w>l
+nnoremap <leader>w <C-w>s<C-w>j
+
+" }}}
+
+" Backups ========================================================= {{{
+
+set backup
+set noswapfile
+set undofile
+set undoreload=10000
+
+set undodir=~/.vim/tmp/undofiles
+set backupdir=~/.vim/tmp/backupfiles
+set directory=~/.vim/tmp/swapfiles
+
+" }}}
+
+" Colors / Font / Statusline ====================================== {{{
+
+syntax on
+
+if has("gui_running")
+"  colorscheme zenburn
+  colorscheme kolor
+  set guifont=Inconsolata\ 10
+else
+  colorscheme railscasts
+"  colorscheme kolor
+endif
+
+hi User1 guifg=#eea040 guibg=#303030 ctermfg=172 ctermbg=236
+hi User2 guifg=#dd3333 guibg=#303030 ctermfg=196 ctermbg=236
+hi User3 guifg=#4682b4 guibg=#303030 ctermfg=12 ctermbg=236
+hi User4 guifg=#a0ee40 guibg=#303030 ctermfg=70 ctermbg=236
+hi User5 guifg=#eeee40 guibg=#303030 ctermfg=184 ctermbg=236
+
+set statusline=
+set statusline +=%1*\ %n\ %*                          "buffer number
+set statusline +=%5*%{&ff}%*                          "file format
+set statusline +=%1*\ (%{strlen(&fenc)?&fenc:'none'}) "file encoding
+set statusline +=%3*\ %y%*                            "file type
+set statusline +=%4*\ %<%F%*                          "full path
+set statusline +=%2*%m%*                              "modified flag
+set statusline +=%1*%=%5l%*                           "current line
+set statusline +=%2*/%L%*                             "total lines
+set statusline +=%1*%4v\ %*                           "virtual column number
+set statusline +=%2*0x%04B\ %*                        "character under cursor
+
+" }}}
+
+" Folding ========================================================= {{{
+
+set foldlevelstart=0
+
+" toggle folds
+nnoremap <silent> <Space> za
+vnoremap <silent> <Space> za
+
+" close all
+nnoremap ZC zC
+vnoremap ZC zC
+
+" toggle recursive
+nnoremap ZA zA
+vnoremap ZA zA
+
+" }}}
+
+" Wildmenu ======================================================== {{{
+
+set wildmenu
+set wildmode=list:longest
+
+set wildignore+=*.aux,*.out,*.toc,*.bbl             " latex
+set wildignore+=*.pyc                               " python
+
+" }}}
+
+" Abbreviations =================================================== {{{
+
+" English {{{
+iabbrev teh the
+" }}}
+" German {{{
+iabbrev wernde werden
+iabbrev aht hat
+" }}}
+
+" }}}
+
+" Filetype stuff ================================================== {{{
+
+" c {{{
+
+augroup ft_c
+  au!
+  au FileType c setlocal ts=4 sts=4 shiftwidth=4 noet tw=120 cc=121
+  au FileType c setlocal foldmethod=syntax
+augroup END
+
+" }}}
+" Version control {{{
+
+augroup ft_commit
+  au!
+  au FileType svn,*commit* setlocal spell spelllang=en
+augroup END
+
+" }}}
+" vim {{{
+
+augroup ft_vim
+  au!
+  au FileType vim setlocal foldmethod=marker foldmarker={{{,}}}
+augroup END
+
+" }}}
+" mail {{{
+
+augroup ft_mail
+  au!
+  au FileType mail setlocal spell spelllang=en,de
+augroup END
+
+" }}}
+" tex {{{
+
+augroup ft_tex
+  au!
+  let g:tex_flavor='latex'
+  au FileType tex setlocal spell spelllang=de,en foldmethod=manual
+  au FileType tex setlocal tw=120 cc=121
+augroup END
+
+" }}}
+" bashrc {{{
+
+augroup ft_bashrc
+  au!
+  au FileType bashrc setlocal syntax=sh foldmethod=marker foldmarker={{{,}}}
+augroup END
+
+" }}}
+" zshrc {{{
+
+augroup ft_zshrc
+  au!
+  au FileType zshrc setlocal syntax=sh foldmethod=marker foldmarker={{{,}}}
+augroup END
+
+" }}}
+" conf {{{
+
+augroup ft_conf
+  au!
+  au FileType conf setlocal foldmethod=marker foldmarker={{{,}}}
+augroup END
+
+" }}}
+" xdefaults {{{
+
+augroup ft_xdefaults
+  au!
+  au FileType xdefaults setlocal foldmethod=marker foldmarker={{{,}}}
+augroup END
+
+" }}}
+
+" }}}
+
+" Plugins ========================================================= {{{
+
+" SecureModeliens {{{
+" https://github.com/ciaranm/securemodelines
+
+let g:secure_modelines_verbose = 1
+let g:secure_modelines_modelines = 5
+let g:secure_modelines_allowed_items = [
+  \"textwidth", "tw",
+  \"softtabstop", "sts",
+  \"tabstop", "ts",
+  \"shiftwidth", "sw",
+  \"expandtab", "et",
+  \"noexpandtab", "noet",
+  \"autoindent", "ai",
+  \"noautoindent", "noai",
+  \"filetype", "ft",
+  \"fileformat", "ff",
+  \"fold", "fo",
+  \"rightleft", "rl",
+  \"norightleft", "norl"
+  \]
+
+" }}}
+" Command-T {{{
+" https://github.com/wincent/Command-T
+
+nnoremap <leader>t :CommandT<cr>
+
+" Max height of window
+let g:CommandTMaxHeight=80
+" Min height of window
+let g:CommandTMinHeight=5
+" Never scan into dot directories
+let g:CommandTScanDotDirectories=0
+
+" }}}
+" NERDTree {{{
+" https://github.com/scrooloose/nerdtree
+
+noremap <F2> :NERDTreeToggle<CR>:NERDTreeMirror<CR>
+inoremap <F2> <ESC>:NERDTreeToggle<CR>:NERDTreeMirror<CR>
+
+let NERDTreeShowBookmarks = 1
+let NERDTreeIgnore = ['\.pyc', '\~$', '\.swo$', '\.git', '\.hg', '\.svn', '\.bzr']
+let NERDTreeChDirMode = 2
+let NERDTreeQuitOnOpen = 0
+let NERDTreeShowHidden = 1
+let NERDTreeKeepTreeInNewTab = 1
+let NERDTreeHighlightCursorline = 1
+let NERDTreeMinimalUI = 0
+let NERDTreeShowLineNumbers = 0
+
+" start NERDTree automatically when vim starts and no file is specified
+augroup nerd_tree
+  au!
+  au VimEnter * if !argc() | NERDTree | endif
+  au BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+augroup END
+
+" }}}
+" Gundo {{{
+" https://github.com/sjl/gundo.vim
+
+nnoremap <F3> :GundoToggle<CR>
+
+" width of the graph
+let g:gundo_width = 45
+" height of the preview window
+let g:gundo_preview_height = 20
+" show preview window below current window, not below the graph
+let g:gundo_preview_bottom = 1
+
+" }}}
+" LustyJuggler {{{
+" https://github.com/vim-scripts/LustyJuggler
+
+nnoremap <leader>b :LustyJuggler<cr>
+
+" }}}
+" syntastic {{{
+" https://github.com/scrooloose/syntastic
+
+let g:syntastic_check_on_open = 1
+let g:syntastic_python_checker_args = ""
+
+" }}}
+" Scratch {{{
+" https://github.com/vim-scripts/scratch.vim
+
+nnoremap <leader><Tab> :Scratch<CR>
+
+" }}}
+
+" }}}
+
+" Quick file editing ============================================== {{{
+
+nnoremap <leader>ev :vsplit ~/.vimrc<cr>
+nnoremap <leader>ex :vsplit ~/.xinitrc<cr>
+nnoremap <leader>eb :vsplit ~/.bashrc<cr>
+nnoremap <leader>eg :vsplit ~/.gitconfig<cr>
+nnoremap <leader>ei :vsplit ~/.i3/config<cr>
+
+" }}}
+
+" vim: set ft=vim softtabstop=2 tabstop=2 shiftwidth=2 expandtab:
