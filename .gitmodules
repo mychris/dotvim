@@ -44,3 +44,6 @@
 	path = bundle/xterm-color-table
     url = https://github.com/guns/xterm-color-table.vim
     ignore = dirty
+[submodule "bundle/splice"]
+	path = bundle/splice
+	url = https://github.com/sjl/splice.vim/
