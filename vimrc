@@ -339,6 +339,18 @@ augroup ft_c
 augroup END
 
 " }}}
+
+" python {{{
+
+augroup ft_python
+  au!
+  au FileType python setlocal ts=2 sts=2 shiftwidth=2
+  au FileType python setlocal foldmethod=indent foldlevel=99
+  au FileType python setlocal ofu=pythoncomplete#Complete cot=menuone,longest
+augroup END
+
+" }}}
+
 " Version control {{{
 
 augroup ft_commit
@@ -405,6 +417,7 @@ augroup ft_xdefaults
 augroup END
 
 " }}}
+
 
 " }}}
 
@@ -499,6 +512,12 @@ let g:syntastic_python_checker_args = ""
 " https://github.com/vim-scripts/scratch.vim
 
 nnoremap <leader><Tab> :Scratch<CR>
+
+" }}}
+" SuperTab {{{
+" https://github.com/ervandew/supertab
+
+let g:SuperTabDefaultCompletionType = "context"
 
 " }}}
 
