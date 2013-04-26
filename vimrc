@@ -59,6 +59,9 @@ command! -bang Q q<bang>
 command! -bang W w<bang>
 command! -bang E e<bang>
 
+command! -bang Qa qa<bang>
+command! -bang QA qa<bang>
+
 command! -bang Wq wq<bang>
 command! -bang WQ wq<bang>
 
