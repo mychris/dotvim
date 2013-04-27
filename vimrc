@@ -43,7 +43,6 @@ set cmdheight=2
 set guioptions-=m
 set guioptions-=T
 set guioptions-=r
-set guioptions-=L
 
 " disable modeline, use SecureModelines
 set modelines=0
@@ -174,7 +173,7 @@ vnoremap <F1> <ESC>
 nnoremap J mzJ`z
 
 " surround with whitespace
-nnoremap <leader><SPACE> dawi<SPACE><SPACE><ESC>hpw
+map <leader><SPACE> ysw(ds)
 
 " save
 nnoremap <leader>s :w!<CR>
