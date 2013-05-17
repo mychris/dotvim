@@ -343,6 +343,14 @@ augroup END
 
 " }}}
 
+" cpp {{{
+augroup ft_cpp
+  au!
+  au FileType cpp setlocal ts=4 sts=4 shiftwidth=4 noet tw=120 cc=121
+  au FileType cpp setlocal foldmethod=syntax
+augroup END
+" }}}
+
 " python {{{
 
 augroup ft_python
