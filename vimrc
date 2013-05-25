@@ -43,6 +43,7 @@ set cmdheight=2
 set guioptions-=m
 set guioptions-=T
 set guioptions-=r
+set guioptions-=L
 
 " disable modeline, use SecureModelines
 set modelines=0
