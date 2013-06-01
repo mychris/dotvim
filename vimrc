@@ -179,6 +179,10 @@ map <leader><SPACE> ysw(ds)
 " save
 nnoremap <leader>s :w!<CR>
 
+" hex
+nnoremap <Leader>hon :%!xxd<CR>
+nnoremap <Leader>hof :%!xxd -r<CR>
+
 " }}}
 
 " Movement ======================================================== {{{
