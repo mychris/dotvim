@@ -347,7 +347,6 @@ augroup ft_c
 augroup END
 
 " }}}
-
 " cpp {{{
 augroup ft_cpp
   au!
@@ -355,7 +354,6 @@ augroup ft_cpp
   au FileType cpp setlocal foldmethod=syntax
 augroup END
 " }}}
-
 " python {{{
 
 augroup ft_python
@@ -366,7 +364,6 @@ augroup ft_python
 augroup END
 
 " }}}
-
 " Version control {{{
 
 augroup ft_commit
@@ -432,6 +429,12 @@ augroup ft_xdefaults
   au FileType xdefaults setlocal foldmethod=marker foldmarker={{{,}}}
 augroup END
 
+" }}}
+" sml {{{
+augroup ft_sml
+  au!
+  au FileType sml setlocal textwidth=120 colorcolumn=121
+augroup END
 " }}}
 
 
