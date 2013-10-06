@@ -354,6 +354,13 @@ augroup ft_cpp
   au FileType cpp setlocal foldmethod=syntax
 augroup END
 " }}}
+" go {{{
+augroup ft_go
+  au!
+  au FileType go setlocal ts=8 sts=8 sw=8 tw=120 cc=121
+  au FileType go setlocal foldmethod=syntax
+augroup END
+" }}}
 " python {{{
 
 augroup ft_python
