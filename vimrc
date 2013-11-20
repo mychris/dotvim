@@ -371,6 +371,13 @@ augroup ft_python
 augroup END
 
 " }}}
+" ruby {{{
+
+augroup ft_ruby
+  au!
+  au FileType ruby setlocal ts=2 sts=2 shiftwidth=2
+augroup END
+" }}}
 " Version control {{{
 
 augroup ft_commit
