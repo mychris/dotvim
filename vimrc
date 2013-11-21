@@ -241,6 +241,11 @@ nnoremap N Nzzzv
 " don't move!
 nnoremap * *<C-o>
 
+" search files for word under cursor
+nnoremap <C-f> :execute "vimgrep /" . expand("<cword>") . "/j **" <Bar> cw<CR>
+nnoremap <leader>k :cn<CR>
+nnoremap <leader>j :cp<CR>
+
 " }}}
 
 " Split windows =================================================== {{{
