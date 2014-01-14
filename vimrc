@@ -282,6 +282,7 @@ set undoreload=10000
 set undodir=~/.vim/tmp/undofiles
 set backupdir=~/.vim/tmp/backupfiles
 set directory=~/.vim/tmp/swapfiles
+set viewdir=~/.vim/tmp/viewfiles
 
 " }}}
 
