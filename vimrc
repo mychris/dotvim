@@ -335,6 +335,10 @@ vnoremap ZC zC
 nnoremap ZA zA
 vnoremap ZA zA
 
+" save and reload folds
+au BufWinLeave * mkview
+au BufWinEnter * silent loadview
+
 " }}}
 
 " Wildmenu ======================================================== {{{
