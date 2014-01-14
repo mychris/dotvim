@@ -559,6 +559,12 @@ nnoremap <leader><Tab> :Scratch<CR>
 let g:SuperTabDefaultCompletionType = "context"
 
 " }}}
+" Ack {{{
+" https://github.com/mileszs/ack.vim
+
+nnoremap <leader>a :Ack <cword><CR>
+
+" }}}
 
 " }}}
 
