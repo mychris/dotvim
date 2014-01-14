@@ -579,7 +579,7 @@ let g:SuperTabDefaultCompletionType = "context"
 " Ack {{{
 " https://github.com/mileszs/ack.vim
 
-nnoremap <leader>a :Ack <cword><CR>
+nnoremap <leader>a :NERDTreeClose<CR>:Ack <cword><CR>
 
 " }}}
 
