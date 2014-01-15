@@ -560,7 +560,7 @@ let g:gundo_preview_bottom = 1
 " LustyJuggler {{{
 " https://github.com/vim-scripts/LustyJuggler
 
-nnoremap <leader>b :LustyJuggler<cr>
+"nnoremap <leader>b :LustyJuggler<cr>
 
 " }}}
 " syntastic {{{
@@ -587,6 +587,10 @@ let g:SuperTabDefaultCompletionType = "context"
 
 nnoremap <leader>a :NERDTreeClose<CR>:Ack <cword><CR>
 
+" }}}
+" Buffet {{{
+" https://github.com/sandeepcr529/Buffet.vim
+nnoremap <leader>b :Bufferlist<CR>
 " }}}
 
 " }}}
