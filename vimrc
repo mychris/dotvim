@@ -384,7 +384,7 @@ augroup END
 " go {{{
 augroup ft_go
   au!
-  au FileType go setlocal ts=8 sts=8 sw=8 tw=120 cc=121 noet
+  au FileType go setlocal ts=8 sts=8 sw=8 tw=120 cc=121 expandtab
   au FileType go setlocal foldmethod=syntax
   au FileType go nnoremap <leader>r :GoCurTest<CR>
 augroup END
