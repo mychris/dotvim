@@ -248,10 +248,25 @@ nnoremap <leader>j :cp<CR>
 
 " }}}
 
-" Split windows =================================================== {{{
+" Windows =================================================== {{{
 
 nnoremap <leader>v <C-w>v<C-w>l
 nnoremap <leader>w <C-w>s<C-w>j
+
+nmap <left> :3wincmd <<CR>
+nmap <right> :3wincmd ><CR>
+nmap <up> :3wincmd +<CR>
+nmap <down> :3wincmd -<CR>
+
+nmap <C-left> :wincmd h<CR>
+nmap <C-right> :wincmd l<CR>
+nmap <C-up> :wincmd k<CR>
+nmap <C-down> :wincmd j<CR>
+
+nmap <S-left> <C-w>H
+nmap <S-right> <C-w>L
+nmap <S-up> <C-w>K
+nmap <S-down> <C-w>j
 
 " }}}
 
