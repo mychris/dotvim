@@ -2,6 +2,14 @@
 " ~/.vimrc
 "
 
+" Environment variables =========================================== {{{
+
+if empty($XDG_CACHE_HOME)
+  let $XDG_CACHE_HOME=expand("$HOME/.cache")
+endif
+
+" }}}
+
 " NO WORDS ======================================================== {{{
 
 filetype off
@@ -292,14 +300,29 @@ nmap <silent><leader>q :QFix<CR>
 " Backups ========================================================= {{{
 
 set backup
+set backupext=.bak
 set noswapfile
 set undofile
 set undoreload=10000
 
-set undodir=~/.vim/tmp/undofiles
-set backupdir=~/.vim/tmp/backupfiles
-set directory=~/.vim/tmp/swapfiles
-set viewdir=~/.vim/tmp/viewfiles
+set undodir=$XDG_CACHE_HOME/vim/undofiles
+set backupdir=$XDG_CACHE_HOME/vim/backup
+set directory=$XDG_CACHE_HOME/vim
+set viewdir=$XDG_CACHE_HOME/vim/viewfiles
+
+" create directories
+if !isdirectory(&undodir)
+  call mkdir(&undodir, "p")
+endif
+if !isdirectory(&backupdir)
+  call mkdir(&backupdir, "p")
+endif
+if !isdirectory(&directory)
+  call mkdir(&directory, "p")
+endif
+if !isdirectory(&viewdir)
+  call mkdir(&viewdir, "p")
+endif
 
 " }}}
 
