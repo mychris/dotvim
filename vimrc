@@ -305,6 +305,8 @@ set noswapfile
 set undofile
 set undoreload=10000
 
+set viminfo+=n$XDG_CACHE_HOME/vim/viminfo
+
 set undodir=$XDG_CACHE_HOME/vim/undofiles
 set backupdir=$XDG_CACHE_HOME/vim/backup
 set directory=$XDG_CACHE_HOME/vim
