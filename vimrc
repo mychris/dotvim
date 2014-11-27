@@ -12,10 +12,9 @@ endif
 
 " NO WORDS ======================================================== {{{
 
-filetype off
 runtime bundle/vim-pathogen/autoload/pathogen.vim
-call pathogen#infect()
-call pathogen#helptags()
+execute pathogen#infect()
+execute pathogen#helptags()
 filetype plugin indent on
 set nocompatible
 Helptags
@@ -507,6 +506,14 @@ augroup ft_conf
 augroup END
 
 " }}}
+" i3 {{{
+
+augroup ft_i3
+  au!
+  au FileType i3 setlocal foldmethod=marker foldmarker={{{,}}}
+augroup END
+
+" }}}
 " xdefaults {{{
 
 augroup ft_xdefaults
@@ -521,7 +528,12 @@ augroup ft_sml
   au FileType sml setlocal textwidth=120 colorcolumn=121
 augroup END
 " }}}
-
+" fstab {{{
+augroup ft_fstab
+  au!
+  au FileType fstab setlocal colorcolumn=0
+augroup END
+" }}}
 
 " }}}
 
@@ -546,7 +558,8 @@ let g:secure_modelines_allowed_items = [
   \"fold", "fo",
   \"rightleft", "rl",
   \"norightleft", "norl",
-  \"foldmethod", "fdm"
+  \"foldmethod", "fdm",
+  \"colorcolumn", "cc"
   \]
 
 " }}}
