@@ -69,3 +69,6 @@
 [submodule "bundle/i3-vim-syntax"]
 	path = bundle/i3-vim-syntax
 	url = https://github.com/PotatoesMaster/i3-vim-syntax.git
+[submodule "bundle/vim-fstab"]
+	path = bundle/vim-fstab
+	url = https://github.com/mychris/vim-fstab.git
