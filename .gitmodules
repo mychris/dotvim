@@ -72,3 +72,9 @@
 [submodule "bundle/vim-fstab"]
 	path = bundle/vim-fstab
 	url = https://github.com/mychris/vim-fstab.git
+[submodule "bundle/systemd-vim"]
+	path = bundle/systemd-vim
+	url = https://github.com/kurayama/systemd-vim-syntax.git
+[submodule "bundle/vim-fish"]
+	path = bundle/vim-fish
+	url = https://github.com/dag/vim-fish.git
