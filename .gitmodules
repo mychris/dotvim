@@ -57,12 +57,6 @@
 	path = bundle/vim-gocode
 	url = https://github.com/Blackrush/vim-gocode.git
 	ignore = dirty
-[submodule "bundle/ack"]
-	path = bundle/ack
-	url = https://github.com/mileszs/ack.vim.git
-[submodule "bundle/buffet"]
-	path = bundle/buffet
-	url = https://github.com/sandeepcr529/Buffet.vim.git
 [submodule "bundle/vim-pathogen"]
 	path = bundle/vim-pathogen
 	url = https://github.com/tpope/vim-pathogen
