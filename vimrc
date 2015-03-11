@@ -10,14 +10,18 @@ endif
 
 " }}}
 
-" NO WORDS ======================================================== {{{
+" Vundle configuration ============================================ {{{
 
-runtime bundle/vim-pathogen/autoload/pathogen.vim
-execute pathogen#infect()
-execute pathogen#helptags()
-filetype plugin indent on
 set nocompatible
-Helptags
+filetype off
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'gmarik/Vundle.vim'
+
+call vundle#end()
+filetype plugin indent on
 
 " }}}
 
