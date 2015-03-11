@@ -466,7 +466,7 @@ augroup END
 
 augroup ft_python
   au!
-  au FileType python setlocal ts=2 sts=2 shiftwidth=2
+  au FileType python setlocal ts=4 sts=4 shiftwidth=4
   au FileType python setlocal foldmethod=indent foldlevel=99
   au FileType python setlocal ofu=pythoncomplete#Complete cot=menuone,longest
 augroup END
