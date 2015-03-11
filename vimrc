@@ -425,26 +425,16 @@ set wildignore+=*.pyc                               " python
 
 " Abbreviations =================================================== {{{
 
-" English {{{
-iabbrev teh the
-" }}}
-" German {{{
-iabbrev wernde werden
-iabbrev aht hat
-" }}}
-
 " }}}
 
 " Filetype stuff ================================================== {{{
 
 " c {{{
-
 augroup ft_c
   au!
   au FileType c setlocal ts=4 sts=4 shiftwidth=4 noet tw=120 cc=121
   au FileType c setlocal foldmethod=syntax
 augroup END
-
 " }}}
 " cpp {{{
 augroup ft_cpp
@@ -463,95 +453,74 @@ augroup ft_go
 augroup END
 " }}}
 " python {{{
-
 augroup ft_python
   au!
   au FileType python setlocal ts=4 sts=4 shiftwidth=4
   au FileType python setlocal foldmethod=indent foldlevel=99
   au FileType python setlocal ofu=pythoncomplete#Complete cot=menuone,longest
 augroup END
-
 " }}}
 " ruby {{{
-
 augroup ft_ruby
   au!
   au FileType ruby setlocal ts=2 sts=2 shiftwidth=2
 augroup END
 " }}}
 " Version control {{{
-
 augroup ft_commit
   au!
   au FileType svn,*commit* setlocal spell spelllang=en
 augroup END
-
 " }}}
 " vim {{{
-
 augroup ft_vim
   au!
   au FileType vim setlocal foldmethod=marker foldmarker={{{,}}}
 augroup END
-
 " }}}
 " mail {{{
-
 augroup ft_mail
   au!
   au FileType mail setlocal spell spelllang=en,de
 augroup END
-
 " }}}
 " tex {{{
-
 augroup ft_tex
   au!
   let g:tex_flavor='latex'
   au FileType tex setlocal spell spelllang=de,en foldmethod=manual
   au FileType tex setlocal tw=120 cc=121
 augroup END
-
 " }}}
 " bashrc {{{
-
 augroup ft_bashrc
   au!
   au FileType bashrc setlocal syntax=sh foldmethod=marker foldmarker={{{,}}}
 augroup END
-
 " }}}
 " zshrc {{{
-
 augroup ft_zshrc
   au!
   au FileType zshrc setlocal syntax=sh foldmethod=marker foldmarker={{{,}}}
 augroup END
-
 " }}}
 " conf {{{
-
 augroup ft_conf
   au!
   au FileType conf setlocal foldmethod=marker foldmarker={{{,}}}
 augroup END
-
 " }}}
 " i3 {{{
-
 augroup ft_i3
   au!
   au FileType i3 setlocal foldmethod=marker foldmarker={{{,}}}
 augroup END
-
 " }}}
 " xdefaults {{{
-
 augroup ft_xdefaults
   au!
   au FileType xdefaults setlocal foldmethod=marker foldmarker={{{,}}}
 augroup END
-
 " }}}
 " sml {{{
 augroup ft_sml
@@ -565,14 +534,12 @@ augroup ft_fstab
   au FileType fstab setlocal colorcolumn=0
 augroup END
 " }}}
-
 " }}}
 
 " Plugins ========================================================= {{{
 
 " SecureModeliens {{{
 " https://github.com/ciaranm/securemodelines
-
 let g:secure_modelines_verbose = 1
 let g:secure_modelines_modelines = 5
 let g:secure_modelines_allowed_items = [
@@ -592,11 +559,10 @@ let g:secure_modelines_allowed_items = [
   \"foldmethod", "fdm",
   \"colorcolumn", "cc"
   \]
-
 " }}}
+
 " Command-T {{{
 " https://github.com/wincent/Command-T
-
 nnoremap <leader>t :CommandT<cr>
 
 " Max height of window
@@ -605,11 +571,10 @@ let g:CommandTMaxHeight=80
 let g:CommandTMinHeight=5
 " Never scan into dot directories
 let g:CommandTScanDotDirectories=0
-
 " }}}
+
 " NERDTree {{{
 " https://github.com/scrooloose/nerdtree
-
 noremap <F2> :NERDTreeToggle<CR>:NERDTreeMirror<CR>
 inoremap <F2> <ESC>:NERDTreeToggle<CR>:NERDTreeMirror<CR>
 
@@ -629,11 +594,10 @@ augroup nerd_tree
   au VimEnter * if !argc() | NERDTree | endif
   au BufEnter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 augroup END
-
 " }}}
+
 " Gundo {{{
 " https://github.com/sjl/gundo.vim
-
 nnoremap <F3> :GundoToggle<CR>
 
 " width of the graph
@@ -642,39 +606,34 @@ let g:gundo_width = 45
 let g:gundo_preview_height = 20
 " show preview window below current window, not below the graph
 let g:gundo_preview_bottom = 1
-
 " }}}
+
 " LustyJuggler {{{
 " https://github.com/vim-scripts/LustyJuggler
-
 "nnoremap <leader>b :LustyJuggler<cr>
-
 " }}}
+
 " syntastic {{{
 " https://github.com/scrooloose/syntastic
-
 let g:syntastic_check_on_open = 1
 let g:syntastic_python_checker_args = ""
-
 " }}}
+
 " Scratch {{{
 " https://github.com/vim-scripts/scratch.vim
-
 nnoremap <leader><Tab> :Scratch<CR>
-
 " }}}
+
 " SuperTab {{{
 " https://github.com/ervandew/supertab
-
 let g:SuperTabDefaultCompletionType = "context"
-
 " }}}
+
 " Ack {{{
 " https://github.com/mileszs/ack.vim
-
 nnoremap <leader>a :NERDTreeClose<CR>:Ack <cword><CR>
-
 " }}}
+
 " Buffet {{{
 " https://github.com/sandeepcr529/Buffet.vim
 nnoremap <leader>b :Bufferlist<CR>
