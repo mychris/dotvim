@@ -14,9 +14,18 @@ make a symlink to ~/.vim/vimrc
 
     ln -s ~/.vim/vimrc ~/.vimrc
 
-then init and update all submodules
+install vundle
 
     cd ~/.vim && git submodule init && git submodule update
+
+then install all vundle bundles
+
+    vim -c "PluginInstall"
+
+Vundle
+------
+
+See <https://github.com/gmarik/Vundle.vim>
 
 Command-T
 ---------
