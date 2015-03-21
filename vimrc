@@ -46,6 +46,7 @@ Plugin 'zeis/vim-kolor'
 Plugin 'tpope/vim-pathogen'
 Plugin 'benmills/vimux'
 Plugin 'guns/xterm-color-table.vim'
+Plugin 'ekalinin/Dockerfile.vim'
 
 call vundle#end()
 filetype plugin indent on
