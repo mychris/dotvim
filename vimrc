@@ -499,10 +499,10 @@ augroup ft_bashrc
   au FileType bashrc setlocal syntax=sh foldmethod=marker foldmarker={{{,}}}
 augroup END
 " }}}
-" zshrc {{{
-augroup ft_zshrc
+" zsh {{{
+augroup ft_zsh
   au!
-  au FileType zshrc setlocal syntax=sh foldmethod=marker foldmarker={{{,}}}
+  au FileType zsh setlocal syntax=sh foldmethod=marker foldmarker={{{,}}}
 augroup END
 " }}}
 " conf {{{
