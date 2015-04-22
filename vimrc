@@ -467,6 +467,12 @@ augroup ft_ruby
   au FileType ruby setlocal ts=2 sts=2 shiftwidth=2
 augroup END
 " }}}
+" javascript {{{
+augroup ft_javascript
+  au!
+  au FileType javascript setlocal ts=2 sts=2 shiftwidth=2 expandtab
+augroup END
+" }}}
 " Version control {{{
 augroup ft_commit
   au!
