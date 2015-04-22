@@ -412,6 +412,8 @@ vnoremap ZA zA
 au BufWinLeave * mkview
 au BufWinEnter * silent loadview
 
+set viewoptions=folds,cursor
+
 " }}}
 
 " Wildmenu ======================================================== {{{
