@@ -20,7 +20,7 @@ install vundle
 
 then install all vundle bundles
 
-    vim -c "PluginInstall"
+    vim +PluginInstall +qall
 
 Vundle
 ------
