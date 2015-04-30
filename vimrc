@@ -20,6 +20,7 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
 
+Plugin 'tpope/vim-fugitive'
 Plugin 'rking/ag.vim'
 Plugin 'vim-scripts/buffet.vim'
 Plugin 'git://git.wincent.com/command-t.git'
