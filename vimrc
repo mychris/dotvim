@@ -20,23 +20,26 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
 
+" plugins
 Plugin 'tpope/vim-fugitive'
+Plugin 'sjl/splice.vim'
 Plugin 'rking/ag.vim'
-Plugin 'vim-scripts/buffet.vim'
 Plugin 'git://git.wincent.com/command-t.git'
 Plugin 'vim-scripts/Gundo'
-Plugin 'PotatoesMaster/i3-vim-syntax'
+Plugin 'vim-scripts/buffet.vim'
 Plugin 'vim-scripts/LustyJuggler'
-Plugin 'vim-scripts/Markdown'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
-Plugin 'derekwyatt/vim-scala'
-Plugin 'vim-scripts/scratch.vim'
+Plugin 'scrooloose/syntastic'
 Plugin 'ciaranm/securemodelines'
-Plugin 'sjl/splice.vim'
 Plugin 'ervandew/supertab'
 Plugin 'tpope/vim-surround'
-Plugin 'scrooloose/syntastic'
+Plugin 'benmills/vimux'
+
+" language plugins
+Plugin 'PotatoesMaster/i3-vim-syntax'
+Plugin 'vim-scripts/Markdown'
+Plugin 'derekwyatt/vim-scala'
 Plugin 'kurayama/systemd-vim-syntax'
 Plugin 'dag/vim-fish'
 Plugin 'mychris/vim-fstab'
@@ -44,9 +47,6 @@ Plugin 'Blackrush/vim-gocode'
 Plugin 'jjrdn/vim-help'
 Plugin 'vim-scripts/vim-json-bundle'
 Plugin 'zeis/vim-kolor'
-Plugin 'tpope/vim-pathogen'
-Plugin 'benmills/vimux'
-Plugin 'guns/xterm-color-table.vim'
 Plugin 'ekalinin/Dockerfile.vim'
 
 call vundle#end()
