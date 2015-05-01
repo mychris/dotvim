@@ -35,6 +35,7 @@ Plugin 'ciaranm/securemodelines'
 Plugin 'ervandew/supertab'
 Plugin 'tpope/vim-surround'
 Plugin 'benmills/vimux'
+Plugin 'majutsushi/tagbar'
 
 " language plugins
 Plugin 'PotatoesMaster/i3-vim-syntax'
@@ -607,9 +608,16 @@ augroup nerd_tree
 augroup END
 " }}}
 
+" Tagbar {{{
+" https://github.com/majutsushi/tagbar
+noremap <F3> :TagbarToggle<CR>
+inoremap <F3> <ESC>:TagbarToggle<CR>
+" }}}
+
 " Gundo {{{
 " https://github.com/sjl/gundo.vim
-nnoremap <F3> :GundoToggle<CR>
+noremap <F4> :GundoToggle<CR>
+inoremap <F4> <ESC>:GundoToggle<CR>
 
 " width of the graph
 let g:gundo_width = 45
