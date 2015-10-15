@@ -38,6 +38,7 @@ Plugin 'benmills/vimux'
 Plugin 'majutsushi/tagbar'
 
 " language plugins
+Plugin 'rust-lang/rust.vim'
 Plugin 'PotatoesMaster/i3-vim-syntax'
 Plugin 'vim-scripts/Markdown'
 Plugin 'derekwyatt/vim-scala'
@@ -49,6 +50,8 @@ Plugin 'jjrdn/vim-help'
 Plugin 'vim-scripts/vim-json-bundle'
 Plugin 'zeis/vim-kolor'
 Plugin 'ekalinin/Dockerfile.vim'
+Plugin 'cespare/vim-toml'
+Plugin 'tfnico/vim-gradle'
 
 call vundle#end()
 filetype plugin indent on
