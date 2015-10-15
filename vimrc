@@ -545,6 +545,12 @@ augroup ft_fstab
   au FileType fstab setlocal colorcolumn=0
 augroup END
 " }}}
+" sh {{{
+augroup ft_sh
+  au!
+  au FileType sh setlocal syntax=sh foldmethod=marker foldmarker={{{,}}}
+augroup END
+" }}}
 " }}}
 
 " Plugins ========================================================= {{{
