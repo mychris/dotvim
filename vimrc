@@ -371,7 +371,7 @@ syntax on
 if has("gui_running")
 "  colorscheme zenburn
   colorscheme kolor
-  set guifont=Inconsolata\ 8
+  set guifont=Hack\ 10
 else
   colorscheme railscasts
 "  colorscheme kolor
