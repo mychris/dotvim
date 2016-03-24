@@ -45,7 +45,7 @@ Plugin 'derekwyatt/vim-scala'
 Plugin 'kurayama/systemd-vim-syntax'
 Plugin 'dag/vim-fish'
 Plugin 'mychris/vim-fstab'
-Plugin 'Blackrush/vim-gocode'
+Plugin 'fatih/vim-go'
 Plugin 'jjrdn/vim-help'
 Plugin 'vim-scripts/vim-json-bundle'
 Plugin 'zeis/vim-kolor'
@@ -454,10 +454,10 @@ augroup END
 " go {{{
 augroup ft_go
   au!
-  au FileType go setlocal ts=8 sts=8 sw=8 tw=120 cc=121 expandtab
+  au FileType go setlocal ts=8 sts=8 sw=8 tw=120 cc=121 noet
   au FileType go setlocal foldmethod=syntax
-  au FileType go nnoremap <leader>r :GoCurTest<CR>
-  au FileType go nnoremap <leader>f :Fmt<CR>
+  au FileType go nnoremap <C-F> :GoFmt<CR>
+  au FileType go noremap <C-F5> :GoTest<CR>
 augroup END
 " }}}
 " python {{{
