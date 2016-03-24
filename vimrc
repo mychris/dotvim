@@ -220,7 +220,9 @@ vnoremap <F1> <ESC>
 nnoremap J mzJ`z
 
 " surround with whitespace
-map <leader><SPACE> ysw(ds)
+map <leader><SPACE> ysiw(ds)
+" surround with "
+map <leader>" ysiw"
 
 " save
 nnoremap <leader>s :w!<CR>
@@ -319,7 +321,7 @@ nmap <S-down> <C-w>j
 " Quickfix ======================================================== {{{
 
 " http://vim.wikia.com/wiki/Toggle_to_open_or_close_the_quickfix_window
-command -bang -nargs=? QFix call QFixToggle(<bang>0)
+command! -bang -nargs=? QFix call QFixToggle(<bang>0)
 function! QFixToggle(forced)
   if exists("g:qfix_win") && a:forced == 0
     cclose
@@ -590,7 +592,7 @@ let g:secure_modelines_allowed_items = [
 
 " Command-T {{{
 " https://github.com/wincent/Command-T
-nnoremap <leader>t :CommandT<cr>
+nnoremap <leader>t :CommandT<CR>
 
 " Max height of window
 let g:CommandTMaxHeight=80
