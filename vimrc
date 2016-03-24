@@ -31,10 +31,11 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'ciaranm/securemodelines'
-Plugin 'ervandew/supertab'
 Plugin 'tpope/vim-surround'
 Plugin 'benmills/vimux'
 Plugin 'majutsushi/tagbar'
+Plugin 'Shougo/neocomplete.vim'
+Plugin 'Konfekt/FastFold'
 
 " language plugins
 Plugin 'rust-lang/rust.vim'
@@ -421,10 +422,6 @@ vnoremap ZM zM
 nnoremap ZA zA
 vnoremap ZA zA
 
-" save and reload folds
-au BufWinLeave * mkview
-au BufWinEnter * silent loadview
-
 set viewoptions=folds,cursor
 
 " }}}
@@ -666,14 +663,19 @@ let g:syntastic_python_checker_args = ""
 nnoremap <leader><Tab> :Scratch<CR>
 " }}}
 
-" SuperTab {{{
-" https://github.com/ervandew/supertab
-let g:SuperTabDefaultCompletionType = "context"
-" }}}
-
 " Ack {{{
 " https://github.com/mileszs/ack.vim
 nnoremap <leader>a :NERDTreeClose<CR>:Ack <cword><CR>
+" }}}
+
+" neocomplete {{{
+" https://github.com/Shougo/neocomplete.vim
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_auto_close_preview = 1
+" <TAB>: completion.
+inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
+inoremap <expr><CR> pumvisible() ? "\<C-y>" : "<CR>"
 " }}}
 
 " }}}
