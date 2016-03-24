@@ -26,7 +26,6 @@ Plugin 'sjl/splice.vim'
 Plugin 'rking/ag.vim'
 Plugin 'git://git.wincent.com/command-t.git'
 Plugin 'vim-scripts/Gundo'
-Plugin 'vim-scripts/buffet.vim'
 Plugin 'vim-scripts/LustyJuggler'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
@@ -645,7 +644,7 @@ let g:gundo_preview_bottom = 1
 
 " LustyJuggler {{{
 " https://github.com/vim-scripts/LustyJuggler
-"nnoremap <leader>b :LustyJuggler<cr>
+nnoremap <leader>b :LustyJuggler<CR>
 " }}}
 
 " syntastic {{{
@@ -667,11 +666,6 @@ let g:SuperTabDefaultCompletionType = "context"
 " Ack {{{
 " https://github.com/mileszs/ack.vim
 nnoremap <leader>a :NERDTreeClose<CR>:Ack <cword><CR>
-" }}}
-
-" Buffet {{{
-" https://github.com/sandeepcr529/Buffet.vim
-nnoremap <leader>b :Bufferlist<CR>
 " }}}
 
 " }}}
