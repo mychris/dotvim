@@ -82,7 +82,7 @@ set scrolloff=3
 set sidescroll=1
 set sidescrolloff=10
 
-set showbreak=↪
+"set showbreak=↪
 
 set cmdheight=2
 
