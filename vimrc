@@ -38,20 +38,22 @@ Plugin 'majutsushi/tagbar'
 
 " language plugins
 Plugin 'rust-lang/rust.vim'
+Plugin 'derekwyatt/vim-scala'
+Plugin 'dag/vim-fish'
+Plugin 'fatih/vim-go'
+Plugin 'alisdair/vim-armasm'
+
+" filetype plugins
 Plugin 'PotatoesMaster/i3-vim-syntax'
 Plugin 'vim-scripts/Markdown'
-Plugin 'derekwyatt/vim-scala'
 Plugin 'kurayama/systemd-vim-syntax'
-Plugin 'dag/vim-fish'
 Plugin 'mychris/vim-fstab'
-Plugin 'fatih/vim-go'
 Plugin 'jjrdn/vim-help'
 Plugin 'vim-scripts/vim-json-bundle'
 Plugin 'zeis/vim-kolor'
 Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'cespare/vim-toml'
 Plugin 'tfnico/vim-gradle'
-Plugin 'alisdair/vim-armasm'
 
 call vundle#end()
 filetype plugin indent on
