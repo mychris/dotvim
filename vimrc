@@ -566,7 +566,7 @@ augroup END
 
 " Plugins ========================================================= {{{
 
-" SecureModeliens {{{
+" SecureModelines {{{
 " https://github.com/ciaranm/securemodelines
 let g:secure_modelines_verbose = 1
 let g:secure_modelines_modelines = 5
