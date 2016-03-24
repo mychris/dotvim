@@ -403,7 +403,7 @@ set statusline +=%2*0x%04B\ %*                        "character under cursor
 
 " Folding ========================================================= {{{
 
-set foldlevelstart=0
+set foldlevelstart=99
 
 " toggle folds
 nnoremap <silent> <Space> za
@@ -412,6 +412,10 @@ vnoremap <silent> <Space> za
 " close all
 nnoremap ZC zC
 vnoremap ZC zC
+
+" open all
+nnoremap ZM zM
+vnoremap ZM zM
 
 " toggle recursive
 nnoremap ZA zA
