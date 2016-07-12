@@ -39,6 +39,7 @@ Plugin 'Konfekt/FastFold'
 
 " language plugins
 Plugin 'rust-lang/rust.vim'
+Plugin 'racer-rust/vim-racer'
 Plugin 'derekwyatt/vim-scala'
 Plugin 'dag/vim-fish'
 Plugin 'fatih/vim-go'
