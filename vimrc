@@ -691,4 +691,4 @@ nnoremap <leader>ei :vsplit ~/.i3/config<cr>
 
 " }}}
 
-" vim: set ft=vim softtabstop=2 tabstop=2 shiftwidth=2 expandtab:
+" vim: set ft=vim sts=2 ts=2 sw=2 et fdl=0:
