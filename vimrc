@@ -442,6 +442,35 @@ set wildignore+=*.pyc                               " python
 
 " Filetype stuff ================================================== {{{
 
+" vim help {{{
+augroup ft_help
+  au!
+  " see: http://vim.wikia.com/wiki/Learn_to_use_help#Simplify_help_navigation
+  " `Enter` to jump to the subject under cursor
+  " `Backspace` to return to the previous subject
+  " `s` to find the next subject
+  " `S` to find the previous subject
+  " `o` to find the next option
+  " `O` to find the previous option
+  " `q` to close help buffer
+  au FileType help nnoremap <buffer> <CR> <C-]>
+  au FileType help nnoremap <buffer> <BS> <C-T>
+  au FileType help nnoremap <buffer> o /'\l\{2,\}'<CR>
+  au FileType help nnoremap <buffer> O ?'\l\{2,\}'<CR>
+  au FileType help nnoremap <buffer> s /\|\zs\S\+\ze\|<CR>
+  au FileType help nnoremap <buffer> S ?\|\zs\S\+\ze\|<CR>
+  au FileType help nnoremap <buffer> q :close<CR>
+
+  au BufEnter *.txt call HelpInNewTab()
+augroup END
+
+function! HelpInNewTab()
+  if &buftype == 'help'
+    "Convert the help window to a tab
+    execute "normal \<C-W>T"
+  endif
+endfunction
+" }}}
 " c {{{
 augroup ft_c
   au!
