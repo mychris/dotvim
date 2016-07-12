@@ -588,6 +588,7 @@ let g:secure_modelines_allowed_items = [
   \"rightleft", "rl",
   \"norightleft", "norl",
   \"foldmethod", "fdm",
+  \"foldlevel", "fdl",
   \"colorcolumn", "cc",
   \"fileencoding", "fenc"
   \]
