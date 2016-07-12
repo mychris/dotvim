@@ -86,7 +86,7 @@ set ttimeoutlen=10
 
 set synmaxcol=600
 
-set scrolloff=3
+set scrolloff=5 "Scroll when X lines from top/bottom
 set sidescroll=1
 set sidescrolloff=10
 
@@ -108,6 +108,9 @@ au FocusLost * silent! wa
 
 " Resize on window resize
 au VimResized * :wincmd =
+
+" Configure % key (via matchit plugin)
+set matchpairs+=<:>,«:»
 
 " please, fix my typos!
 command! -bang Q q<bang>
@@ -214,8 +217,6 @@ let maplocalleader = "\\"
 
 " Basic Keybindings =============================================== {{{
 
-nnoremap M K
-
 nnoremap ; :
 inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
@@ -274,6 +275,10 @@ vnoremap L g_
 nnoremap g, g,zz
 nnoremap g; g;zz
 
+" Move screen down and center cursor
+nnoremap <C-D> <C-D>M
+nnoremap <C-U> <C-U>M
+
 " }}}
 
 " Searching ======================================================= {{{
@@ -304,7 +309,7 @@ nnoremap <leader>j :cp<CR>
 
 " }}}
 
-" Windows =================================================== {{{
+" Windows ========================================================= {{{
 
 nnoremap <leader>v <C-w>v<C-w>l
 nnoremap <leader>w <C-w>s<C-w>j
@@ -415,17 +420,25 @@ set foldlevelstart=99
 nnoremap <silent> <Space> za
 vnoremap <silent> <Space> za
 
-" close all
-nnoremap ZC zC
-vnoremap ZC zC
-
 " open all
+nnoremap ZR zR
+vnoremap ZR zR
+
+" close all
 nnoremap ZM zM
 vnoremap ZM zM
 
 " toggle recursive
 nnoremap ZA zA
 vnoremap ZA zA
+
+nnoremap <silent> z0 zM
+nnoremap <silent> z1 :set foldlevel=1<CR>
+nnoremap <silent> z2 :set foldlevel=2<CR>
+nnoremap <silent> z3 :set foldlevel=3<CR>
+nnoremap <silent> z4 :set foldlevel=4<CR>
+nnoremap <silent> z5 :set foldlevel=5<CR>
+nnoremap <silent> z9 zR
 
 set viewoptions=folds,cursor
 
@@ -446,36 +459,6 @@ set wildignore+=*.pyc                               " python
 " }}}
 
 " Filetype stuff ================================================== {{{
-
-" vim help {{{
-augroup ft_help
-  au!
-  " see: http://vim.wikia.com/wiki/Learn_to_use_help#Simplify_help_navigation
-  " `Enter` to jump to the subject under cursor
-  " `Backspace` to return to the previous subject
-  " `s` to find the next subject
-  " `S` to find the previous subject
-  " `o` to find the next option
-  " `O` to find the previous option
-  " `q` to close help buffer
-  au FileType help nnoremap <buffer> <CR> <C-]>
-  au FileType help nnoremap <buffer> <BS> <C-T>
-  au FileType help nnoremap <buffer> o /'\l\{2,\}'<CR>
-  au FileType help nnoremap <buffer> O ?'\l\{2,\}'<CR>
-  au FileType help nnoremap <buffer> s /\|\zs\S\+\ze\|<CR>
-  au FileType help nnoremap <buffer> S ?\|\zs\S\+\ze\|<CR>
-  au FileType help nnoremap <buffer> q :close<CR>
-
-  au BufEnter *.txt call HelpInNewTab()
-augroup END
-
-function! HelpInNewTab()
-  if &buftype == 'help'
-    "Convert the help window to a tab
-    execute "normal \<C-W>T"
-  endif
-endfunction
-" }}}
 " c {{{
 augroup ft_c
   au!
@@ -499,6 +482,7 @@ augroup END
 " go {{{
 augroup ft_go
   au!
+  au FileType godoc nnoremap q :close<CR>
   au FileType go setlocal ts=8 sts=8 sw=8 tw=120 cc=121 noet
   au FileType go setlocal foldmethod=syntax
   au FileType go nnoremap <C-F> :GoFmt<CR>
@@ -528,6 +512,7 @@ augroup END
 " Version control {{{
 augroup ft_commit
   au!
+  au FileType svn,*commit* call setpos('.', [0, 1, 1, 0])
   au FileType svn,*commit* setlocal spell spelllang=en
 augroup END
 " }}}
@@ -689,11 +674,10 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_python_checker_args = ""
 let g:syntastic_cpp_compiler = 'clang++'
 let g:syntastic_cpp_compiler_options = ' -std=c++11'
-" }}}
-
-" Scratch {{{
-" https://github.com/vim-scripts/scratch.vim
-nnoremap <leader><Tab> :Scratch<CR>
+" fix possible missbehaviour with vim-go
+" https://github.com/fatih/vim-go#using-with-syntastic
+let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 " }}}
 
 " Ack {{{
@@ -721,6 +705,36 @@ nnoremap <leader>eb :vsplit ~/.bashrc<cr>
 nnoremap <leader>eg :vsplit ~/.gitconfig<cr>
 nnoremap <leader>ei :vsplit ~/.i3/config<cr>
 
+" }}}
+
+" Vim help ======================================================== {{{
+augroup ft_help
+  au!
+  " see: http://vim.wikia.com/wiki/Learn_to_use_help#Simplify_help_navigation
+  " `Enter` to jump to the subject under cursor
+  " `Backspace` to return to the previous subject
+  " `s` to find the next subject
+  " `S` to find the previous subject
+  " `o` to find the next option
+  " `O` to find the previous option
+  " `q` to close help buffer
+  au FileType help nnoremap <buffer> <CR> <C-]>
+  au FileType help nnoremap <buffer> <BS> <C-T>
+  au FileType help nnoremap <buffer> o /'\l\{2,\}'<CR>
+  au FileType help nnoremap <buffer> O ?'\l\{2,\}'<CR>
+  au FileType help nnoremap <buffer> s /\|\zs\S\+\ze\|<CR>
+  au FileType help nnoremap <buffer> S ?\|\zs\S\+\ze\|<CR>
+  au FileType help nnoremap <buffer> q :close<CR>
+
+  au BufEnter *.txt call HelpInNewTab()
+augroup END
+
+function! HelpInNewTab()
+  if &buftype == 'help'
+    "Convert the help window to a tab
+    execute "normal \<C-W>T"
+  endif
+endfunction
 " }}}
 
 " vim: set ft=vim sts=2 ts=2 sw=2 et fdl=0:
