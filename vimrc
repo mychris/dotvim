@@ -657,6 +657,8 @@ nnoremap <leader>b :LustyJuggler<CR>
 " https://github.com/scrooloose/syntastic
 let g:syntastic_check_on_open = 1
 let g:syntastic_python_checker_args = ""
+let g:syntastic_cpp_compiler = 'clang++'
+let g:syntastic_cpp_compiler_options = ' -std=c++11'
 " }}}
 
 " Scratch {{{
