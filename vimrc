@@ -92,8 +92,6 @@ set scrolloff=5 "Scroll when X lines from top/bottom
 set sidescroll=1
 set sidescrolloff=10
 
-"set showbreak=↪
-
 set cmdheight=2
 
 set guioptions-=m
@@ -193,12 +191,16 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set expandtab
+"set showbreak=↪
 
 " long lines
 set wrap
+set linebreak
 set textwidth=80
 set formatoptions=qrn1
 set colorcolumn=81
+
+command! -nargs=* Wrap set wrap linebreak nolist
 
 set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮,trail:␣
 
