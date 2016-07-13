@@ -711,11 +711,11 @@ inoremap <expr><CR> pumvisible() ? "\<C-y>" : "<CR>"
 
 " Quick file editing ============================================== {{{
 
-nnoremap <leader>ev :vsplit ~/.vimrc<cr>
-nnoremap <leader>ex :vsplit ~/.xinitrc<cr>
-nnoremap <leader>eb :vsplit ~/.bashrc<cr>
-nnoremap <leader>eg :vsplit ~/.gitconfig<cr>
-nnoremap <leader>ei :vsplit ~/.i3/config<cr>
+nnoremap <leader>ev :tabedit ~/.vimrc<cr>
+nnoremap <leader>ex :tabedit ~/.xinitrc<cr>
+nnoremap <leader>eb :tabedit ~/.bashrc<cr>
+nnoremap <leader>eg :tabedit ~/.config/git/config<cr>
+nnoremap <leader>ei :tabedit ~/.config/i3/config<cr>
 
 " }}}
 
