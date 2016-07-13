@@ -22,6 +22,7 @@ Plugin 'VundleVim/Vundle.vim'
 
 " plugins
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'sirver/UltiSnips'
 Plugin 'tpope/vim-fugitive'
 Plugin 'sjl/splice.vim'
 Plugin 'rking/ag.vim'
@@ -278,6 +279,10 @@ nnoremap g; g;zz
 " Move screen down and center cursor
 nnoremap <C-D> <C-D>M
 nnoremap <C-U> <C-U>M
+
+" UltiSnips
+let g:UltiSnipsJumpForwardTrigger="<C-j>"
+let g:UltiSnipsJumpBackwardTrigger="<C-k>"
 
 " }}}
 
@@ -619,6 +624,12 @@ let g:secure_modelines_allowed_items = [
 " Match window
 let g:ctrlp_match_window = 'bottom,order:btt,min:5,max:30'
 
+" }}}
+
+" UltiSnips {{{
+" https://github.com/sirver/UltiSnips
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
 " }}}
 
 " NERDTree {{{
