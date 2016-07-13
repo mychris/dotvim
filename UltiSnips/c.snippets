@@ -1,0 +1,16 @@
+
+# main()
+snippet main "main"
+int main(int argc, char **argv) {
+	${0}
+	return 0;
+}
+endsnippet
+
+# For Loop
+snippet for "Indexed for-loop"
+for (int ${1:i} = 0; $1 < ${2:count}; ++$1) {
+	${0}
+}
+endsnippet
+

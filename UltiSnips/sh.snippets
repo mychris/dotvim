@@ -1,0 +1,19 @@
+
+snippet #! "shebang and default set/unset"
+`echo "#!/bin/sh"`
+
+# exit if command fails
+set -e
+# sane behaviour for cd
+unset CDPATH
+# set IFS to SP HT LF.
+IFS=' 	
+'
+
+$0
+endsnippet
+
+snippet vim:
+`echo "# vim: ft=sh ts=2 sts=2 sw=2 et:"`
+endsnippet
+
