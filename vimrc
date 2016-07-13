@@ -21,10 +21,10 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " plugins
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'sjl/splice.vim'
 Plugin 'rking/ag.vim'
-Plugin 'git://git.wincent.com/command-t.git'
 Plugin 'vim-scripts/Gundo'
 Plugin 'vim-scripts/LustyJuggler'
 Plugin 'scrooloose/nerdcommenter'
@@ -58,6 +58,11 @@ Plugin 'tfnico/vim-gradle'
 
 call vundle#end()
 filetype plugin indent on
+
+augroup ft_vundle
+  au!
+  au FileType vundle nnoremap q ZZ
+augroup END
 
 " }}}
 
@@ -623,16 +628,12 @@ let g:secure_modelines_allowed_items = [
   \]
 " }}}
 
-" Command-T {{{
-" https://github.com/wincent/Command-T
-nnoremap <leader>t :CommandT<CR>
+" CtrlP {{{
+" https://github.com/ctrlpvim/ctrlp.vim
 
-" Max height of window
-let g:CommandTMaxHeight=80
-" Min height of window
-let g:CommandTMinHeight=5
-" Never scan into dot directories
-let g:CommandTScanDotDirectories=0
+" Match window
+let g:ctrlp_match_window = 'bottom,order:btt,min:5,max:30'
+
 " }}}
 
 " NERDTree {{{
