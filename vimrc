@@ -248,24 +248,6 @@ nnoremap <Leader>hof :%!xxd -r<CR>
 
 " Movement ======================================================== {{{
 
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
-nnoremap <PageUp> <nop>
-nnoremap <PageDown> <nop>
-nnoremap <Home> <nop>
-nnoremap <End> <nop>
-
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
-inoremap <PageUp> <nop>
-inoremap <PageDown> <nop>
-inoremap <Home> <nop>
-inoremap <End> <nop>
-
 noremap j gj
 noremap k gk
 noremap gj j
@@ -321,11 +303,6 @@ nnoremap <leader>j :cp<CR>
 
 nnoremap <leader>v <C-w>v<C-w>l
 nnoremap <leader>w <C-w>s<C-w>j
-
-nmap <left> :3wincmd <<CR>
-nmap <right> :3wincmd ><CR>
-nmap <up> :3wincmd +<CR>
-nmap <down> :3wincmd -<CR>
 
 nmap <C-left> :wincmd h<CR>
 nmap <C-right> :wincmd l<CR>
