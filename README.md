@@ -10,7 +10,8 @@ Just clone the repository into ~/.vim
 
     $ git clone git://github.com/mychris/dotvim.git ~/.vim
 
-make a symlink to ~/.vim/vimrc
+make a symlink to ~/.vim/vimrc, if your vim version is <
+[7.3.1178](https://github.com/vim/vim/commit/6a459902592e2a4ba68).
 
     $ ln -s ~/.vim/vimrc ~/.vimrc
 
