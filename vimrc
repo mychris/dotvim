@@ -362,6 +362,11 @@ set backupdir=$XDG_CACHE_HOME/vim/backup
 set directory=$XDG_CACHE_HOME/vim
 set viewdir=$XDG_CACHE_HOME/vim/viewfiles
 
+" delete old files
+if filereadable(expand("$HOME/.viminfo"))
+  call delete(expand("$HOME/.viminfo"))
+endif
+
 " create directories
 if !isdirectory(&undodir)
   call mkdir(&undodir, "p")
