@@ -594,7 +594,8 @@ let g:secure_modelines_allowed_items = [
   \"foldmethod", "fdm",
   \"foldlevel", "fdl",
   \"colorcolumn", "cc",
-  \"fileencoding", "fenc"
+  \"fileencoding", "fenc",
+  \"spelllang", "spl"
   \]
 " }}}
 
