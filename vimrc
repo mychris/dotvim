@@ -53,10 +53,21 @@ Plugin 'hallison/vim-markdown'
 Plugin 'kurayama/systemd-vim-syntax'
 Plugin 'mychris/vim-fstab'
 Plugin 'leshill/vim-json'
-Plugin 'zeis/vim-kolor'
 Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'cespare/vim-toml'
 Plugin 'tfnico/vim-gradle'
+
+" color themes
+Plugin 'jpo/vim-railscasts-theme'
+Plugin 'jnurmine/Zenburn'
+Plugin 'tomasr/molokai'
+Plugin 'zeis/vim-kolor'
+Plugin 'fugalh/desert.vim'
+Plugin 'cdaddr/gentooish.vim'
+Plugin 'vim-scripts/oceandeep'
+Plugin 'chriskempson/base16-vim'
+Plugin 'dracula/vim'
+Plugin 'nanotech/jellybeans.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -202,13 +213,16 @@ set colorcolumn=81
 
 command! -nargs=* Wrap set wrap linebreak nolist
 
-set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮,trail:␣
+set listchars=tab:▸\ ,extends:❯,precedes:❮,trail:␣
+set list
 
-augroup show_list
-  au!
-  au InsertEnter * set list
-  au InsertLeave * set nolist
-augroup END
+"set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮,trail:␣
+"
+"augroup show_list
+"  au!
+"  au InsertEnter * set list
+"  au InsertLeave * set nolist
+"augroup END
 
 " }}}
 
