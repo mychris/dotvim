@@ -68,6 +68,7 @@ Plugin 'vim-scripts/oceandeep'
 Plugin 'chriskempson/base16-vim'
 Plugin 'dracula/vim'
 Plugin 'nanotech/jellybeans.vim'
+Plugin 'fxn/vim-monochrome'
 
 call vundle#end()
 filetype plugin indent on
@@ -240,8 +241,7 @@ inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 
-"no need any more, use capslock, remap in X11
-"inoremap jk <ESC>
+inoremap jk <ESC>
 
 " Don't move cursor!
 nnoremap J mzJ`z
@@ -387,7 +387,7 @@ if has("gui_running")
   colorscheme kolor
   set guifont=Hack\ 10
 else
-  colorscheme railscasts
+  colorscheme monochrome
 "  colorscheme kolor
 endif
 
@@ -689,9 +689,9 @@ let g:syntastic_sh_checkers = ['shellcheck']
 let g:syntastic_bash_checkers = ['shellcheck']
 " }}}
 
-" Ack {{{
-" https://github.com/mileszs/ack.vim
-nnoremap <leader>a :NERDTreeClose<CR>:Ack <cword><CR>
+" Ag {{{
+" https://github.com/rking/ag.vim
+nnoremap <leader>a :NERDTreeClose<CR>:Ag <cword><CR>
 " }}}
 
 " neocomplete {{{
