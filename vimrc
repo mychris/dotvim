@@ -588,6 +588,12 @@ augroup ft_sh
   au FileType sh setlocal syntax=sh foldmethod=marker foldmarker={{{,}}}
 augroup END
 " }}}
+" nroff {{{
+augroup ft_nroff
+  au!
+  au FileType nroff setlocal spell spelllang=en
+augroup END
+" }}}
 " }}}
 
 " Plugins ========================================================= {{{
