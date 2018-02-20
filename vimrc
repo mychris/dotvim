@@ -65,6 +65,7 @@ Plugin 'chriskempson/base16-vim'
 Plugin 'dracula/vim'
 Plugin 'nanotech/jellybeans.vim'
 Plugin 'fxn/vim-monochrome'
+Plugin 'xero/blaquemagick.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -388,8 +389,9 @@ if has("gui_running")
   colorscheme kolor
   set guifont=Hack\ 10
 else
-  colorscheme monochrome
+"  colorscheme monochrome
 "  colorscheme kolor
+  colorscheme blaquemagick
 endif
 
 hi User1 guifg=#eea040 guibg=#303030 ctermfg=172 ctermbg=236
