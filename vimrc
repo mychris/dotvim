@@ -37,6 +37,7 @@ Plugin 'ciaranm/securemodelines'
 Plugin 'majutsushi/tagbar'
 Plugin 'Shougo/neocomplete.vim'
 Plugin 'Konfekt/FastFold'
+Plugin 'lyuts/vim-rtags'
 
 " language plugins
 Plugin 'rust-lang/rust.vim'
